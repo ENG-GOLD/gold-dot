@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: n8n-gold-bot
+    env: docker
+    plan: free
+    dockerCommand: n8n start
+    envVars:
+      - key: N8N_HOST
+        value: n8n-gold-bot.onrender.com
+      - key: N8N_PORT
+        value: "10000"
+      - key: NODE_ENV
+        value: production
+    ports:
+      - port: 5678
+        protocol: TCP
